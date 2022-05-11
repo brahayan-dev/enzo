@@ -1,5 +1,5 @@
 step = 38;
-thickness = 1.8;
+thickness = 1.5;
 total_side = 28;
 total_width = 50;
 total_height = 120;
@@ -22,7 +22,7 @@ module Back() {
 }
 
 module Shelf(z) {
- side = 25;
+ side = 26;
  translate([ thickness
            , thickness
            , z]) {
@@ -34,7 +34,7 @@ module Shelf(z) {
 
 module Kickplate() {
  translate([ thickness
-           , total_side - 1.6 * thickness
+           , total_side - thickness
            , 0]) {
   cube([ total_width
        , thickness
