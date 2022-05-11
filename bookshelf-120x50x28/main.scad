@@ -1,8 +1,8 @@
-step = 400;
-thickness = 15;
-total_side = 320;
-total_width = 650;
-total_height = 1800;
+step = 380;
+thickness = 18;
+total_side = 280;
+total_width = 500;
+total_height = 1200;
 height_kickplate = 140;
 
 module Side(x) {
@@ -22,7 +22,7 @@ module Back() {
 }
 
 module Shelf(z) {
- side = 300;
+ side = 250;
  translate([ thickness
            , thickness
            , z]) {
@@ -42,11 +42,12 @@ module Kickplate() {
  }
 }
 
-Back();
+#Back();
 #Side(0);
-#Side(650 + thickness);
+Side(total_width + thickness);
 #Kickplate();
 
+Shelf(total_height - thickness);
 for (k = [ height_kickplate
          : step
          : total_height
